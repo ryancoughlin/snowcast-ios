@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5D48EAE21BB2186900636D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48EAE11BB2186900636D4C /* AppDelegate.swift */; };
-		5D48EAE41BB2186900636D4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48EAE31BB2186900636D4C /* ViewController.swift */; };
 		5D48EAE71BB2186900636D4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D48EAE51BB2186900636D4C /* Main.storyboard */; };
 		5D48EAE91BB2186900636D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D48EAE81BB2186900636D4C /* Assets.xcassets */; };
 		5D48EAEC1BB2186900636D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D48EAEA1BB2186900636D4C /* LaunchScreen.storyboard */; };
+		5D48EAFB1BB21DBC00636D4C /* ViewControllers in Resources */ = {isa = PBXBuildFile; fileRef = 5D48EAFA1BB21DBC00636D4C /* ViewControllers */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D48EADE1BB2186900636D4C /* Snowcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D48EAE11BB2186900636D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D48EAE31BB2186900636D4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D48EAE61BB2186900636D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D48EAE81BB2186900636D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D48EAEB1BB2186900636D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D48EAED1BB2186900636D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D48EAFA1BB21DBC00636D4C /* ViewControllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewControllers; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 		5D48EAE01BB2186900636D4C /* Snowcast */ = {
 			isa = PBXGroup;
 			children = (
+				5D48EAFA1BB21DBC00636D4C /* ViewControllers */,
 				5D48EAE11BB2186900636D4C /* AppDelegate.swift */,
-				5D48EAE31BB2186900636D4C /* ViewController.swift */,
 				5D48EAE51BB2186900636D4C /* Main.storyboard */,
 				5D48EAE81BB2186900636D4C /* Assets.xcassets */,
 				5D48EAEA1BB2186900636D4C /* LaunchScreen.storyboard */,
@@ -122,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D48EAEC1BB2186900636D4C /* LaunchScreen.storyboard in Resources */,
+				5D48EAFB1BB21DBC00636D4C /* ViewControllers in Resources */,
 				5D48EAE91BB2186900636D4C /* Assets.xcassets in Resources */,
 				5D48EAE71BB2186900636D4C /* Main.storyboard in Resources */,
 			);
@@ -134,7 +135,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D48EAE41BB2186900636D4C /* ViewController.swift in Sources */,
 				5D48EAE21BB2186900636D4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
