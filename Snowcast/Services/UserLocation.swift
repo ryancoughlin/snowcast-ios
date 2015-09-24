@@ -34,7 +34,6 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("didChangeAuthorizationStatus")
         
         switch status {
         case .NotDetermined:
