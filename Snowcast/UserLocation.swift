@@ -1,10 +1,6 @@
 import Foundation
 import CoreLocation
 
-protocol UserLocationProtocol {
-    func sendUserLocation()
-}
-
 class UserLocation: NSObject, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
@@ -14,7 +10,7 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
         
         if self.locationManager.respondsToSelector(
             Selector("requestAlwaysAuthorization")) {
-            self.locationManager.requestWhenInUseAuthorization()
+                self.locationManager.requestWhenInUseAuthorization()
         }
         
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
