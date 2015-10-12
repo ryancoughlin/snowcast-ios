@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lML-EP-DyL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Resorts-->
@@ -24,11 +26,14 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XOR-XE-2Lb" kind="show" identifier="showResortDetailSegue" id="OP9-QV-x0h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -42,12 +47,91 @@
             </objects>
             <point key="canvasLocation" x="1005" y="1192"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Resort Detail View Controller-->
+        <scene sceneID="vSE-aG-IkT">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="XOR-XE-2Lb" customClass="ResortDetailViewController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vv3-iq-XJ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="5bn-YF-NOa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DOI-4f-muH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stowe Mountain Resort" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93f-kH-xcu">
+                                <rect key="frame" x="20" y="94" width="560" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xr-VW-2XU">
+                                <rect key="frame" x="20" y="150" width="560" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-mn-g49" userLabel="Open Trails View" customClass="ResortPieView" customModule="Snowcast" customModuleProvider="target">
+                                        <rect key="frame" x="-7.5" y="0.0" width="185" height="150"/>
+                                        <color key="backgroundColor" red="1" green="0.30218527470000001" blue="0.26195586770000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKJ-aV-Dg8" userLabel="Open Percent View" customClass="ResortPieView" customModule="Snowcast" customModuleProvider="target">
+                                        <rect key="frame" x="187.5" y="0.0" width="185" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="liE-gL-Tc7"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sn-VP-hCc" userLabel="Open Lifts View" customClass="ResortPieView" customModule="Snowcast" customModuleProvider="target">
+                                        <rect key="frame" x="382.5" y="0.0" width="185" height="150"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qKJ-aV-Dg8" firstAttribute="centerY" secondItem="7Xr-VW-2XU" secondAttribute="centerY" id="6BL-zO-Wvb"/>
+                                    <constraint firstItem="qKJ-aV-Dg8" firstAttribute="top" secondItem="7Xr-VW-2XU" secondAttribute="top" id="Dmw-hl-Fjq"/>
+                                    <constraint firstItem="9Sn-VP-hCc" firstAttribute="leading" secondItem="qKJ-aV-Dg8" secondAttribute="trailing" constant="10" id="JId-10-LC2"/>
+                                    <constraint firstItem="9Sn-VP-hCc" firstAttribute="baseline" secondItem="qKJ-aV-Dg8" secondAttribute="baseline" id="Mwt-ho-gDq"/>
+                                    <constraint firstItem="9Sn-VP-hCc" firstAttribute="height" secondItem="qKJ-aV-Dg8" secondAttribute="height" id="Q01-Pb-3s8"/>
+                                    <constraint firstItem="qKJ-aV-Dg8" firstAttribute="centerX" secondItem="7Xr-VW-2XU" secondAttribute="centerX" id="Xij-0Q-7px"/>
+                                    <constraint firstItem="9Sn-VP-hCc" firstAttribute="width" secondItem="qKJ-aV-Dg8" secondAttribute="width" id="YrE-uO-KJP"/>
+                                    <constraint firstItem="qKJ-aV-Dg8" firstAttribute="width" secondItem="7Xr-VW-2XU" secondAttribute="width" multiplier="0.33" id="jHp-PK-DhV"/>
+                                    <constraint firstAttribute="bottom" secondItem="qKJ-aV-Dg8" secondAttribute="bottom" id="jpV-Oz-SIm"/>
+                                    <constraint firstItem="r4f-mn-g49" firstAttribute="baseline" secondItem="qKJ-aV-Dg8" secondAttribute="baseline" id="lub-yv-aJh"/>
+                                    <constraint firstItem="r4f-mn-g49" firstAttribute="width" secondItem="qKJ-aV-Dg8" secondAttribute="width" id="oRW-WH-vCT"/>
+                                    <constraint firstItem="r4f-mn-g49" firstAttribute="height" secondItem="qKJ-aV-Dg8" secondAttribute="height" id="pI2-gk-R1b"/>
+                                    <constraint firstAttribute="height" secondItem="qKJ-aV-Dg8" secondAttribute="height" id="tVY-R9-Mk6"/>
+                                    <constraint firstItem="qKJ-aV-Dg8" firstAttribute="leading" secondItem="r4f-mn-g49" secondAttribute="trailing" constant="10" id="wue-4V-xbs"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6BL-zO-Wvb"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="93f-kH-xcu" firstAttribute="trailing" secondItem="DOI-4f-muH" secondAttribute="trailingMargin" id="CKS-kg-V9h"/>
+                            <constraint firstItem="7Xr-VW-2XU" firstAttribute="top" secondItem="93f-kH-xcu" secondAttribute="bottom" constant="29.5" id="Erd-Tu-jtr"/>
+                            <constraint firstItem="7Xr-VW-2XU" firstAttribute="trailing" secondItem="DOI-4f-muH" secondAttribute="trailingMargin" id="XOR-JT-g10"/>
+                            <constraint firstItem="7Xr-VW-2XU" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="aa5-I5-pOr"/>
+                            <constraint firstItem="7Xr-VW-2XU" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="el6-fU-pRA"/>
+                            <constraint firstItem="93f-kH-xcu" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="ioq-fu-nFc"/>
+                            <constraint firstItem="7Xr-VW-2XU" firstAttribute="trailing" secondItem="DOI-4f-muH" secondAttribute="trailingMargin" id="jMc-t9-3Es"/>
+                            <constraint firstItem="7Xr-VW-2XU" firstAttribute="centerX" secondItem="DOI-4f-muH" secondAttribute="centerX" id="npM-qC-vol"/>
+                            <constraint firstItem="93f-kH-xcu" firstAttribute="top" secondItem="vv3-iq-XJ5" secondAttribute="bottom" constant="30" id="zdP-jt-VOi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="el6-fU-pRA"/>
+                                <exclude reference="jMc-t9-3Es"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="openTrailsView" destination="r4f-mn-g49" id="Nsp-ax-Umx"/>
+                        <outlet property="resortNameLabel" destination="93f-kH-xcu" id="GP2-es-UuP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0C-Pd-Lnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1005" y="2018"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NcR-In-T3w">

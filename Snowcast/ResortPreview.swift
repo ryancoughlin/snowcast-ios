@@ -2,10 +2,16 @@ import Foundation
 
 struct ResortPreview {
     
-    let resortName: String
+    let name: String
+    let type: String
+    let openTrails: String
+    let openLifts: String
 
     init(resortDictionary: Dictionary <String, AnyObject>) {
-        print(resortDictionary)
-        resortName = resortDictionary["resortName"] as! String
+        name = resortDictionary["resortName"] as! String
+        type = resortDictionary["resortType"] as! String
+        openTrails = resortDictionary["maxOpenDownHillTrails"] as! String
+        openLifts = resortDictionary["maxOpenDownHillLifts"] as! String
+        
     }
 }
