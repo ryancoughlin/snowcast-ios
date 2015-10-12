@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Snowcast
-//
-//  Created by Ryan Coughlin on 9/24/15.
-//  Copyright © 2015 Ryan Coughlin. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

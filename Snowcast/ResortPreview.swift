@@ -2,10 +2,9 @@ import Foundation
 
 struct ResortPreview {
     
-    let resortName: String
+    let name: String
 
     init(resortDictionary: Dictionary <String, AnyObject>) {
-        print(resortDictionary)
-        resortName = resortDictionary["resortName"] as! String
+        name = resortDictionary["resortName"] as! String
     }
 }
