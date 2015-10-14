@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D5D2A5D1BCC987C007C8F3A /* Tracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D2A5C1BCC987C007C8F3A /* Tracker.storyboard */; settings = {ASSET_TAGS = (); }; };
+		5D5D2A611BCC9E22007C8F3A /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D2A601BCC9E22007C8F3A /* TrackerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		5D5D2A631BCC9EBA007C8F3A /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D2A621BCC9EBA007C8F3A /* FlatButton.swift */; settings = {ASSET_TAGS = (); }; };
+		5D5D2A671BCD42CB007C8F3A /* TrackerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D2A661BCD42CB007C8F3A /* TrackerTimer.swift */; settings = {ASSET_TAGS = (); }; };
 		5D90F11A1BC0EECF007C68EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90F1191BC0EECF007C68EE /* QuartzCore.framework */; };
 		5D90F11C1BC0F7FF007C68EE /* CircularProgressViewNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D90F11B1BC0F7FF007C68EE /* CircularProgressViewNib.xib */; settings = {ASSET_TAGS = (); }; };
 		5D90F11E1BC0FCBE007C68EE /* ResortPieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90F11D1BC0FCBE007C68EE /* ResortPieView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D5D2A5C1BCC987C007C8F3A /* Tracker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tracker.storyboard; sourceTree = "<group>"; };
+		5D5D2A601BCC9E22007C8F3A /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		5D5D2A621BCC9EBA007C8F3A /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		5D5D2A661BCD42CB007C8F3A /* TrackerTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerTimer.swift; sourceTree = "<group>"; };
 		5D90F1191BC0EECF007C68EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5D90F11B1BC0F7FF007C68EE /* CircularProgressViewNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressViewNib.xib; sourceTree = "<group>"; };
 		5D90F11D1BC0FCBE007C68EE /* ResortPieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortPieView.swift; sourceTree = "<group>"; };
@@ -74,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				5D90F11B1BC0F7FF007C68EE /* CircularProgressViewNib.xib */,
+				5D5D2A5C1BCC987C007C8F3A /* Tracker.storyboard */,
+				5D5D2A621BCC9EBA007C8F3A /* FlatButton.swift */,
 				5DBB61C61BB4326A0090A34E /* Main.storyboard */,
 				5DBB61CB1BB4326A0090A34E /* LaunchScreen.storyboard */,
 			);
@@ -130,9 +140,11 @@
 			isa = PBXGroup;
 			children = (
 				5DACF3EC1BC0E73700C8D018 /* CircularProgressView.swift */,
+				5D5D2A601BCC9E22007C8F3A /* TrackerViewController.swift */,
 				5DACF3EE1BC0E75E00C8D018 /* CircularProgressLayer.swift */,
 				5DBB61C21BB4326A0090A34E /* AppDelegate.swift */,
 				5D90F11D1BC0FCBE007C68EE /* ResortPieView.swift */,
+				5D5D2A661BCD42CB007C8F3A /* TrackerTimer.swift */,
 				5DACF3E81BC0D9D900C8D018 /* Models */,
 				5DACF3E61BC0D9C100C8D018 /* Storyboards */,
 				5DBB61C91BB4326A0090A34E /* Assets.xcassets */,
@@ -215,6 +227,7 @@
 				5DBB61CA1BB4326A0090A34E /* Assets.xcassets in Resources */,
 				5D90F11C1BC0F7FF007C68EE /* CircularProgressViewNib.xib in Resources */,
 				5DBB61C81BB4326A0090A34E /* Main.storyboard in Resources */,
+				5D5D2A5D1BCC987C007C8F3A /* Tracker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,10 +292,13 @@
 				5DACF3ED1BC0E73700C8D018 /* CircularProgressView.swift in Sources */,
 				5DC4FC3D1BC0959F0021F215 /* ResortService.swift in Sources */,
 				5DBB61D71BB4329E0090A34E /* UserLocation.swift in Sources */,
+				5D5D2A631BCC9EBA007C8F3A /* FlatButton.swift in Sources */,
 				5D90F11E1BC0FCBE007C68EE /* ResortPieView.swift in Sources */,
 				5DC4FC3B1BC0952B0021F215 /* ResortsTableViewController.swift in Sources */,
 				5DBB61D91BB432AE0090A34E /* ResortPreview.swift in Sources */,
+				5D5D2A671BCD42CB007C8F3A /* TrackerTimer.swift in Sources */,
 				5DBB61C31BB4326A0090A34E /* AppDelegate.swift in Sources */,
+				5D5D2A611BCC9E22007C8F3A /* TrackerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
