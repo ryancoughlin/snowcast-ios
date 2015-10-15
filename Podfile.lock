@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (2.0.2)
-  - Argo (2.0.0)
-  - Curry (1.2.0)
+  - Alamofire (3.0.0)
+  - Argo (2.1.0)
+  - Curry (1.3.0)
   - Runes (3.0.0)
   - SwiftyJSON (2.3.0)
 
@@ -18,14 +18,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyJSON:
-    :commit: 3b5d0d4e0c19173b1bf0dc823bde25ad870f70c0
+    :commit: 83dc3138b14571200ea7f070933a2a510491e997
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
-  Argo: 43133aa1612b249bbadd24aca94605aa0f13690d
-  Curry: d0bd819af242d78cf068e1e9e914ae9f476e84ed
+  Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
+  Argo: f65db7f50301f7a623514cca2b15aa63e147b91a
+  Curry: 74e8d3e3c43fed131a2a87b29f613ab832623c19
   Runes: b0ffeed58b9577155e53571508b4309c904ef587
-  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+  SwiftyJSON: cacfe0373d584585716bd1d43202c24cc66afd65
 
 COCOAPODS: 0.38.2

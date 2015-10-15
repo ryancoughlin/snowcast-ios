@@ -3,17 +3,19 @@ import UIKit
 class ResortsTableViewController: UITableViewController {
     
     let resortTableCell: String = "resortTableCell"
-    
-    var resortService: ResortService?
     var resorts: Array<ResortPreview> = []
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.resortService = ResortService()
+        let resortService = ResortService()
+        let userLocation = UserLocation()
         
-        self.resortService?.fetchResorts() { (let resorts) in
+        userLocation.startMonitoringSignificantLocationChanges()
+    
+        
+        resortService.fetchResorts() { (let resorts) in
             self.resorts = resorts
             self.tableView.reloadData()
         }

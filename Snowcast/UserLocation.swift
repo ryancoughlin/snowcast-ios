@@ -51,4 +51,9 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
             
         }
     }
+    
+    func startMonitoringSignificantLocationChanges() {
+        print("Started monitoring significant location changes")
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
 }

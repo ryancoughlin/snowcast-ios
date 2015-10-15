@@ -12,7 +12,7 @@ class ResortService {
         self.requestSnowData = RequestSnowData()
         
         requestSnowData?.getSnowConditons() { (let json) in
-            if let resortsRAW = json["items"] as? Array <Dictionary<String, AnyObject>> {
+            if let resortsRAW = json["data"] as? Array <Dictionary<String, AnyObject>> {
 
                 let resorts = resortsRAW.map() {
                     ResortPreview(resortDictionary: $0)

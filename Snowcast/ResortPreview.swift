@@ -6,6 +6,6 @@ struct ResortPreview {
 
     init(resortDictionary: Dictionary <String, AnyObject>) {
         print(resortDictionary)
-        resortName = resortDictionary["resortName"] as! String
+        resortName = resortDictionary["name"] as! String
     }
 }
