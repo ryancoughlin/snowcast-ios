@@ -1,21 +1,22 @@
+import PromiseKit
 import UIKit
+import CoreLocation
 
 class ResortsTableViewController: UITableViewController {
     
-    let resortTableCell: String = "resortTableCell"
-    var resorts: Array<ResortPreview> = []
-
-
+    typealias JSONDict = Dictionary <String, AnyObject>
+    
+    let resortTableCell = "resortTableCell"
+    let resortService = ResortService()
+    let userLocation = LocationService()
+    var resorts: Array <ResortPreview> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let resortService = ResortService()
-        let userLocation = UserLocation()
-        
-        userLocation.startMonitoringSignificantLocationChanges()
-    
-        
-        resortService.fetchResorts() { (let resorts) in
+        self.resortService.makeSnowConditonRequest().then { (foo: JSONDict) in
+            return self.resortService.parseResorts(foo)
+        }.then { resorts -> Void in
             self.resorts = resorts
             self.tableView.reloadData()
         }
@@ -36,8 +37,7 @@ class ResortsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(resortTableCell, forIndexPath: indexPath)
 
-        cell.textLabel?.text = self.resorts[indexPath.row].resortName
-
+        cell.textLabel?.text = self.resorts[indexPath.row].name
         return cell
     }
 
@@ -50,5 +50,4 @@ class ResortsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

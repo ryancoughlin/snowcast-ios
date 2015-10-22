@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+            <gpx
+            xmlns="http://www.topografix.com/GPX/1/1"
+            xmlns:gpxx = "http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+            xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd
+            http://www.garmin.com/xmlschemas/GpxExtensions/v3
+            http://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd"
+            version="1.1"
+            creator="StefanLage">
+                <wpt lat="42.35844729999999" lon="-71.0575571">
+                    <time>2015-10-19 03:11:08 +0000</time>
+                    <name>Boston</name>
+                    <extensions>
+                        <gpxx:WaypointExtension>
+                            <gpxx:Address>
+                                <gpxx:StreetAddress>1 State Street</gpxx:StreetAddress>
+                                <gpxx:City>Boston</gpxx:City>
+                                <gpxx:Country>USA</gpxx:Country>
+                                <gpxx:PostalCode>02128</gpxx:PostalCode>
+                            </gpxx:Address>
+                        </gpxx:WaypointExtension>
+                    </extensions>
+                </wpt>
+            </gpx>
