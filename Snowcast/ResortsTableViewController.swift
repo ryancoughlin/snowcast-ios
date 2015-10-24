@@ -14,12 +14,21 @@ class ResortsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.resortService.makeSnowConditonRequest().then { (foo: JSONDict) in
+        self.userLocation.requestLocation()
+
+        self.observe("userLocation.location").then { foo in
+            return self.resortService.getCoordinates(foo)
+        }.then { foo in
+            return self.resortService.requestData(foo)
+        }.then { (foo: JSONDict) in
             return self.resortService.parseResorts(foo)
         }.then { resorts -> Void in
             self.resorts = resorts
             self.tableView.reloadData()
+        }.error { error in
+            print(error)
         }
+        
     }
 
     // MARK: - Table view data source
