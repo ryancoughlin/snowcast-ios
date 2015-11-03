@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="baseHeight" destination="AGe-Ev-j5l" id="c2L-OP-YPn"/>
                 <outlet property="newSnow24Height" destination="bzA-6L-EGo" id="tsF-SQ-AMG"/>
-                <outlet property="newSnowAmountLabel" destination="86z-9Z-Ctc" id="iJd-70-kQ3"/>
                 <outlet property="snowLevelsView" destination="iN0-l3-epB" id="6ud-Bk-sED"/>
             </connections>
         </placeholder>
@@ -18,16 +17,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmI-Pw-stE" userLabel="Base Depth">
-                    <rect key="frame" x="0.0" y="212" width="600" height="120"/>
+                    <rect key="frame" x="0.0" y="232" width="600" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASE DEPTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyt-rZ-41P">
-                            <rect key="frame" x="14" y="94" width="566" height="12"/>
+                            <rect key="frame" x="14" y="74" width="566" height="12"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2U-gG-VwE">
-                            <rect key="frame" x="14" y="56" width="49" height="36"/>
+                            <rect key="frame" x="14" y="36" width="49" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -35,7 +34,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.14117647058823529" green="0.16078431372549021" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="120" id="AGe-Ev-j5l"/>
+                        <constraint firstAttribute="height" constant="100" id="AGe-Ev-j5l"/>
                         <constraint firstItem="Iyt-rZ-41P" firstAttribute="leading" secondItem="LmI-Pw-stE" secondAttribute="leading" constant="14" id="HZd-2Q-CRc"/>
                         <constraint firstItem="Iyt-rZ-41P" firstAttribute="top" secondItem="j2U-gG-VwE" secondAttribute="bottom" constant="2" id="Xkr-wa-CsS"/>
                         <constraint firstAttribute="bottom" secondItem="Iyt-rZ-41P" secondAttribute="bottom" constant="14" id="YHF-IT-3ab"/>
@@ -43,56 +42,56 @@
                         <constraint firstAttribute="trailing" secondItem="Iyt-rZ-41P" secondAttribute="trailing" constant="20" symbolic="YES" id="yU8-Ec-jf4"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-61-LBb" userLabel="New Snow 24">
-                    <rect key="frame" x="0.0" y="202" width="600" height="10"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="250" constant="10" id="bzA-6L-EGo"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRESH SNOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWL-uk-ic1">
-                    <rect key="frame" x="14" y="176" width="70" height="12"/>
+                    <rect key="frame" x="14" y="196" width="70" height="12"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub9-Uq-CuL" userLabel="Surface Conditions">
-                    <rect key="frame" x="0.0" y="202" width="600" height="4"/>
-                    <color key="backgroundColor" red="0.57647058823529407" green="0.83921568627450982" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="4" id="juj-JX-Xfc"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86z-9Z-Ctc" customClass="UILabelCounter" customModule="Snowcast" customModuleProvider="target">
-                    <rect key="frame" x="14" y="138" width="31" height="36"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86z-9Z-Ctc">
+                    <rect key="frame" x="14" y="158" width="31" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROZEN GRANULAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHU-DC-Xum">
-                    <rect key="frame" x="92" y="176.5" width="99" height="12"/>
+                    <rect key="frame" x="92" y="196" width="99" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.50980392156862742" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-61-LBb" userLabel="New Snow 24">
+                    <rect key="frame" x="0.0" y="222" width="600" height="10"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="bzA-6L-EGo"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub9-Uq-CuL" userLabel="Surface Conditions">
+                    <rect key="frame" x="0.0" y="218" width="600" height="4"/>
+                    <color key="backgroundColor" red="0.57647058823529407" green="0.83921568627450982" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="oUl-8h-rXs"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.087662927806377411" green="0.10880830138921738" blue="0.20258507132530212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ub9-Uq-CuL" firstAttribute="trailing" secondItem="bR5-61-LBb" secondAttribute="trailing" id="3Go-av-Yia"/>
-                <constraint firstItem="Ub9-Uq-CuL" firstAttribute="leading" secondItem="bR5-61-LBb" secondAttribute="leading" id="6lr-Gz-MyY"/>
+                <constraint firstItem="Ub9-Uq-CuL" firstAttribute="leading" secondItem="bR5-61-LBb" secondAttribute="leading" id="4ZE-ac-6IQ"/>
+                <constraint firstAttribute="trailing" secondItem="bR5-61-LBb" secondAttribute="trailing" id="8n0-8y-NgB"/>
                 <constraint firstItem="LmI-Pw-stE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CFO-0W-cHj"/>
+                <constraint firstItem="bR5-61-LBb" firstAttribute="top" secondItem="OHU-DC-Xum" secondAttribute="bottom" constant="14" id="ETR-IO-S0P"/>
+                <constraint firstItem="bR5-61-LBb" firstAttribute="top" secondItem="Ub9-Uq-CuL" secondAttribute="bottom" id="IBd-TX-7Bb"/>
                 <constraint firstItem="OHU-DC-Xum" firstAttribute="leading" secondItem="iWL-uk-ic1" secondAttribute="trailing" constant="8" id="LJA-jU-1Ec"/>
                 <constraint firstItem="iWL-uk-ic1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="Sec-mf-Wz7"/>
                 <constraint firstAttribute="trailing" secondItem="LmI-Pw-stE" secondAttribute="trailing" id="Wio-sU-z1a"/>
+                <constraint firstItem="bR5-61-LBb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zec-he-dL8"/>
                 <constraint firstAttribute="bottom" secondItem="LmI-Pw-stE" secondAttribute="bottom" id="ZmK-CV-Xar"/>
                 <constraint firstItem="86z-9Z-Ctc" firstAttribute="leading" secondItem="iWL-uk-ic1" secondAttribute="leading" id="b1b-af-rIT"/>
-                <constraint firstAttribute="trailing" secondItem="bR5-61-LBb" secondAttribute="trailing" id="bav-F7-MPz"/>
-                <constraint firstItem="Ub9-Uq-CuL" firstAttribute="top" secondItem="iWL-uk-ic1" secondAttribute="bottom" constant="14" id="dba-ls-izh"/>
                 <constraint firstItem="iWL-uk-ic1" firstAttribute="top" secondItem="86z-9Z-Ctc" secondAttribute="bottom" constant="2" id="fxn-42-OBw"/>
-                <constraint firstItem="bR5-61-LBb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="goz-6f-5cd"/>
-                <constraint firstItem="Ub9-Uq-CuL" firstAttribute="top" secondItem="bR5-61-LBb" secondAttribute="top" id="grL-Yz-L3P"/>
                 <constraint firstItem="OHU-DC-Xum" firstAttribute="top" secondItem="iWL-uk-ic1" secondAttribute="top" id="hzC-Cf-JZe"/>
-                <constraint firstItem="LmI-Pw-stE" firstAttribute="top" secondItem="bR5-61-LBb" secondAttribute="bottom" id="zlN-wI-Py0"/>
+                <constraint firstItem="Ub9-Uq-CuL" firstAttribute="trailing" secondItem="bR5-61-LBb" secondAttribute="trailing" id="t3O-sQ-B7U"/>
+                <constraint firstItem="LmI-Pw-stE" firstAttribute="top" secondItem="bR5-61-LBb" secondAttribute="bottom" id="zLe-SF-ySv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

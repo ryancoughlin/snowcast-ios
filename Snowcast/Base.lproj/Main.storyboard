@@ -64,23 +64,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powder day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-jw-0O1">
-                                <rect key="frame" x="20" y="74" width="560" height="78.5"/>
+                                <rect key="frame" x="20" y="74" width="560" height="79"/>
                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="62"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at Stowe Mountain Resort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSq-10-zRn">
-                                <rect key="frame" x="20" y="147" width="197" height="20.5"/>
+                                <rect key="frame" x="20" y="148" width="197" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qs-mc-BA2" customClass="SnowLevelsView" customModule="Snowcast" customModuleProvider="target">
-                                <rect key="frame" x="20" y="450" width="560" height="150"/>
+                                <rect key="frame" x="20" y="388" width="560" height="212"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="6X7-Hz-qNn"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6X7-Hz-qNn"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,25 +93,14 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="1Qs-mc-BA2" secondAttribute="trailing" id="48J-GU-egu"/>
                             <constraint firstItem="mSq-10-zRn" firstAttribute="top" secondItem="cHg-jw-0O1" secondAttribute="bottom" constant="-5" id="4FD-Kf-Let"/>
-                            <constraint firstItem="1Qs-mc-BA2" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" constant="-20" id="Hfa-Rm-wXd"/>
+                            <constraint firstItem="1Qs-mc-BA2" firstAttribute="top" secondItem="mSq-10-zRn" secondAttribute="bottom" constant="220" id="Jkj-u2-zww"/>
                             <constraint firstItem="5bn-YF-NOa" firstAttribute="top" secondItem="1Qs-mc-BA2" secondAttribute="bottom" id="Nwe-e7-o7X"/>
                             <constraint firstItem="cHg-jw-0O1" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="WaP-yj-2Im"/>
-                            <constraint firstItem="5bn-YF-NOa" firstAttribute="top" secondItem="1Qs-mc-BA2" secondAttribute="bottom" id="XOd-6H-gkY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Qs-mc-BA2" secondAttribute="trailing" constant="-20" id="YhF-P7-tBd"/>
                             <constraint firstItem="mSq-10-zRn" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="ZWv-A5-fVs"/>
-                            <constraint firstItem="5bn-YF-NOa" firstAttribute="top" secondItem="1Qs-mc-BA2" secondAttribute="bottom" id="aXc-1H-Dix"/>
                             <constraint firstItem="cHg-jw-0O1" firstAttribute="top" secondItem="vv3-iq-XJ5" secondAttribute="bottom" constant="10" id="gOs-l9-xLd"/>
                             <constraint firstItem="1Qs-mc-BA2" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="gxB-Hh-bve"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHg-jw-0O1" secondAttribute="trailing" id="tma-W4-itM"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Hfa-Rm-wXd"/>
-                                <exclude reference="YhF-P7-tBd"/>
-                                <exclude reference="XOd-6H-gkY"/>
-                                <exclude reference="aXc-1H-Dix"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="or8-79-YO3" customClass="ResortNavigationItem" customModule="Snowcast" customModuleProvider="target"/>
                     <connections>
