@@ -19,6 +19,7 @@
 		5DBB61D91BB432AE0090A34E /* ResortPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB61D81BB432AE0090A34E /* ResortPreview.swift */; };
 		5DC4FC3B1BC0952B0021F215 /* ResortsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4FC3A1BC0952B0021F215 /* ResortsTableViewController.swift */; };
 		5DC4FC3D1BC0959F0021F215 /* ResortService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4FC3C1BC0959F0021F215 /* ResortService.swift */; };
+		5DC630991BE8FFC60060636B /* ScaleViewHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC630981BE8FFC60060636B /* ScaleViewHeights.swift */; };
 		5DCB54301BDBC5330054A278 /* SnowLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB542F1BDBC5330054A278 /* SnowLevelsView.swift */; };
 		5DCB54321BDBC5480054A278 /* SnowLevelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB54311BDBC5480054A278 /* SnowLevelsView.xib */; };
 		5DCD5DC51BE6B5760094FD65 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD5DC41BE6B5760094FD65 /* CircularStd-Bold.otf */; };
@@ -43,6 +44,7 @@
 		5DBB61D81BB432AE0090A34E /* ResortPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortPreview.swift; sourceTree = "<group>"; };
 		5DC4FC3A1BC0952B0021F215 /* ResortsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortsTableViewController.swift; sourceTree = "<group>"; };
 		5DC4FC3C1BC0959F0021F215 /* ResortService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortService.swift; sourceTree = "<group>"; };
+		5DC630981BE8FFC60060636B /* ScaleViewHeights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleViewHeights.swift; sourceTree = "<group>"; };
 		5DCB542F1BDBC5330054A278 /* SnowLevelsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowLevelsView.swift; sourceTree = "<group>"; };
 		5DCB54311BDBC5480054A278 /* SnowLevelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnowLevelsView.xib; sourceTree = "<group>"; };
 		5DCD5DC41BE6B5760094FD65 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5DACF3EA1BC0DE3600C8D018 /* ResortDetailViewController.swift */,
+				5DC630981BE8FFC60060636B /* ScaleViewHeights.swift */,
 				5DC4FC3A1BC0952B0021F215 /* ResortsTableViewController.swift */,
 			);
 			name = ViewControllers;
@@ -286,6 +289,7 @@
 				5DBB61D51BB4328F0090A34E /* RequestSnowData.swift in Sources */,
 				5DCB54301BDBC5330054A278 /* SnowLevelsView.swift in Sources */,
 				5DC4FC3D1BC0959F0021F215 /* ResortService.swift in Sources */,
+				5DC630991BE8FFC60060636B /* ScaleViewHeights.swift in Sources */,
 				5DCD5DC71BE7035B0094FD65 /* ResortNavigationController.swift in Sources */,
 				5D0B42FE1BE0590000AE1CCF /* Extensions.swift in Sources */,
 				5DBB61D71BB4329E0090A34E /* UserLocation.swift in Sources */,
