@@ -1,10 +1,17 @@
 import UIKit
 
-class ResortNavigationController: UINavigationController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+@IBDesignable class NavigationBar: UINavigationBar {
+    @IBInspectable var backButtonImage: UIImage? {
+        didSet {
+            self.backIndicatorImage = backButtonImage
+            self.backIndicatorTransitionMaskImage = backButtonImage
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationBar.shadowImage = UIImage()
+        self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.shadowImage = UIImage()
     }
 }

@@ -1,51 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tFh-ll-fNj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lML-EP-DyL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="CircularStd-Bold.otf">
-            <string>CircularStd-Bold</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
-        <!--Resorts-->
+        <!--Resorts Near Me-->
         <scene sceneID="2pO-Tv-12g">
             <objects>
                 <tableViewController id="tBD-jQ-maa" customClass="ResortsTableViewController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eT3-l3-9Bn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eT3-l3-9Bn" customClass="ResortTableView" customModule="Snowcast" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resortTableCell" textLabel="RH2-vF-qDF" style="IBUITableViewCellStyleDefault" id="9tB-Ul-MEQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="9tB-Ul-MEQ" customClass="ResortTableViewCell" customModule="Snowcast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9tB-Ul-MEQ" id="Efp-rD-LSF">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RH2-vF-qDF">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
+                                    <color key="backgroundColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="tFh-ll-fNj" kind="show" identifier="showResortDetailSegue" id="OP9-QV-x0h"/>
+                                    <segue destination="XOR-XE-2Lb" kind="show" identifier="resortDetailSegue" id="izN-em-KpH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="tBD-jQ-maa" id="L4O-o0-tPw"/>
                             <outlet property="delegate" destination="tBD-jQ-maa" id="avp-h1-Hkw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Resorts" id="O0Z-fm-ev1"/>
+                    <navigationItem key="navigationItem" title="Resorts Near Me" id="O0Z-fm-ev1">
+                        <barButtonItem key="backBarButtonItem" title=" " id="TfC-he-a28"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceT-KI-0vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,23 +54,30 @@
                         <viewControllerLayoutGuide type="bottom" id="5bn-YF-NOa"/>
                     </layoutGuides>
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="DOI-4f-muH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powder day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-jw-0O1">
-                                <rect key="frame" x="20" y="74" width="560" height="79"/>
-                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="62"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-jw-0O1">
+                                <rect key="frame" x="20" y="30" width="779" height="157"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="We can only hope for snow">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="48" name="CircularStd-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.25"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at Stowe Mountain Resort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSq-10-zRn">
-                                <rect key="frame" x="20" y="148" width="197" height="21"/>
+                                <rect key="frame" x="20" y="182" width="197" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qs-mc-BA2" customClass="SnowLevelsView" customModule="Snowcast" customModuleProvider="target">
-                                <rect key="frame" x="20" y="388" width="560" height="212"/>
+                                <rect key="frame" x="0.0" y="423" width="600" height="114"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="6X7-Hz-qNn"/>
@@ -91,34 +92,44 @@
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Qs-mc-BA2" secondAttribute="trailing" id="48J-GU-egu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Qs-mc-BA2" secondAttribute="trailing" constant="-20" id="48J-GU-egu"/>
                             <constraint firstItem="mSq-10-zRn" firstAttribute="top" secondItem="cHg-jw-0O1" secondAttribute="bottom" constant="-5" id="4FD-Kf-Let"/>
                             <constraint firstItem="1Qs-mc-BA2" firstAttribute="top" secondItem="mSq-10-zRn" secondAttribute="bottom" constant="220" id="Jkj-u2-zww"/>
                             <constraint firstItem="5bn-YF-NOa" firstAttribute="top" secondItem="1Qs-mc-BA2" secondAttribute="bottom" id="Nwe-e7-o7X"/>
                             <constraint firstItem="cHg-jw-0O1" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="WaP-yj-2Im"/>
                             <constraint firstItem="mSq-10-zRn" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="ZWv-A5-fVs"/>
-                            <constraint firstItem="cHg-jw-0O1" firstAttribute="top" secondItem="vv3-iq-XJ5" secondAttribute="bottom" constant="10" id="gOs-l9-xLd"/>
-                            <constraint firstItem="1Qs-mc-BA2" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="gxB-Hh-bve"/>
+                            <constraint firstItem="cHg-jw-0O1" firstAttribute="top" secondItem="vv3-iq-XJ5" secondAttribute="bottom" constant="30" id="gOs-l9-xLd"/>
+                            <constraint firstItem="1Qs-mc-BA2" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" constant="-20" id="gxB-Hh-bve"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHg-jw-0O1" secondAttribute="trailing" id="tma-W4-itM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="or8-79-YO3" customClass="ResortNavigationItem" customModule="Snowcast" customModuleProvider="target"/>
                     <connections>
+                        <outlet property="resortNameLabel" destination="mSq-10-zRn" id="Gln-F8-stW"/>
                         <outlet property="snowLevelsView" destination="1Qs-mc-BA2" id="lqQ-WW-Lky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0C-Pd-Lnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="2113"/>
+            <point key="canvasLocation" x="1005" y="1959"/>
         </scene>
-        <!--Resort Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="NcR-In-T3w">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lML-EP-DyL" customClass="ResortNavigationController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lML-EP-DyL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7q8-Zm-Agd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7q8-Zm-Agd" customClass="NavigationBar" customModule="Snowcast" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.22352941176470589" green="0.23921568627450981" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="backButtonImage" value="back-button"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -129,23 +140,8 @@
             </objects>
             <point key="canvasLocation" x="193" y="1192"/>
         </scene>
-        <!--Resort Navigation Controller-->
-        <scene sceneID="3we-Vl-oGZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tFh-ll-fNj" customClass="ResortNavigationController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" id="FCk-I2-NXH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XOR-XE-2Lb" kind="relationship" relationship="rootViewController" id="eQT-t7-63g"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ftx-zB-9Wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1010" y="2113"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="back-button" width="10" height="18"/>
+    </resources>
 </document>

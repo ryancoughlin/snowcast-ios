@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SnowLevelsView" customModule="Snowcast" customModuleProvider="target">
             <connections>
+                <outlet property="baseDepthLabel" destination="j2U-gG-VwE" id="RlN-dn-049"/>
                 <outlet property="baseHeight" destination="AGe-Ev-j5l" id="c2L-OP-YPn"/>
                 <outlet property="newSnow24Height" destination="bzA-6L-EGo" id="tsF-SQ-AMG"/>
+                <outlet property="newSnow24Label" destination="86z-9Z-Ctc" id="65C-ad-pkI"/>
                 <outlet property="snowLevelsView" destination="iN0-l3-epB" id="6ud-Bk-sED"/>
             </connections>
         </placeholder>
@@ -75,7 +77,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.087662927806377411" green="0.10880830138921738" blue="0.20258507132530212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.13273337483406067" green="0.14835241436958313" blue="0.18572694063186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Ub9-Uq-CuL" firstAttribute="leading" secondItem="bR5-61-LBb" secondAttribute="leading" id="4ZE-ac-6IQ"/>
                 <constraint firstAttribute="trailing" secondItem="bR5-61-LBb" secondAttribute="trailing" id="8n0-8y-NgB"/>

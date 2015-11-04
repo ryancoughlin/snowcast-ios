@@ -3,52 +3,30 @@ import CoreLocation
 
 class UserLocation: NSObject, CLLocationManagerDelegate {
     
-    var locationManager: CLLocationManager = CLLocationManager()
-    
+    private var locationManager = CLLocationManager()
+    dynamic var location: CLLocation!
+
     override init() {
         super.init()
         
-        if self.locationManager.respondsToSelector(
-            Selector("requestAlwaysAuthorization")) {
-                self.locationManager.requestWhenInUseAuthorization()
-        }
-        
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
     }
     
-    func startLocationUpdates() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-        }
+    func requestLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let latestLocation = locations.last as CLLocation!
-        NSNotificationCenter.defaultCenter().postNotificationName("userLocation", object: latestLocation)
+        location = locations.last
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        
-        switch status {
-        case .NotDetermined:
-            print(".NotDetermined")
-            break
-            
-        case .Authorized:
-            print(".Authorized")
-            self.locationManager.startUpdatingLocation()
-            break
-            
-        case .Denied:
-            print(".Denied")
-            break
-            
-        default:
-            print("Unhandled authorization status")
-            break
-            
-        }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+    }
+    
+    deinit {
+        locationManager.delegate = nil
     }
 }

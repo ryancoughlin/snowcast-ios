@@ -1,10 +1,45 @@
-import Foundation
-
 struct ResortPreview {
-    
-    let name: String
 
-    init(resortDictionary: Dictionary <String, AnyObject>) {
-        name = resortDictionary["resortName"] as! String
+    var name: String = "Resort Name"
+    var baseDepth: Float = 0
+    var newSnow24: Float = 10
+    var scaledBaseDepth: Float = 50
+    var baseDepthString: String {
+        get {
+            return String(format: "%2d\"", baseDepth)
+        }
+    }
+
+    var newSnow24String: String {
+        get {
+            return String(format: "%2d\"", newSnow24)
+        }
+    }
+
+    init(dictionary: Dictionary <String, AnyObject>) {
+
+        if let resortName = dictionary["name"] as? String {
+            self.name = resortName
+        }
+        
+        if let resortInfo = dictionary["resortInfo"] as? Dictionary <String, AnyObject> {
+            if let items = resortInfo["items"] as? Array <Dictionary <String, AnyObject>> {
+                if let first = items[0] as? Dictionary <String, AnyObject> {
+                    if let baseDepth = first["avgBaseDepthMax"] as? Float {
+                        self.baseDepth = baseDepth
+                    }
+                }
+            }
+        }
+        
+        if let resortInfo = dictionary["resortInfo"] as? Dictionary <String, AnyObject> {
+            if let base = resortInfo["newSnowMax"] as? Float {
+                self.newSnow24 = base
+            }
+        }
+        
+        let heightsFromAPI = Heights.init(newSnow: self.newSnow24, baseDepth: self.baseDepth)
+        let scaledHeights = heightsFromAPI * scaleFactor
+        print(scaledHeights)
     }
 }

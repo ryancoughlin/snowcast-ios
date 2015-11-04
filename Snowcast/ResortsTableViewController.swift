@@ -1,21 +1,39 @@
+import PromiseKit
 import UIKit
+import CoreLocation
 
 class ResortsTableViewController: UITableViewController {
     
     let resortTableCell = "resortTableCell"
-    let showResortDetailSegue = "showResortDetailSegue"
-    
-    var resortService: ResortService?
-    var resorts: Array<ResortPreview> = []
+    var requestSnowData: RequestSnowData = RequestSnowData()
+    var resortService: ResortService = ResortService()
+    var locationService: UserLocation = UserLocation()
+    var selectedIndexPath : NSIndexPath?
+    var activityIndicator = UIActivityIndicatorView()
+
+    var resorts: Array<ResortPreview> = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.resortService = ResortService()
         
-        self.resortService?.fetchResorts() { (let resorts) in
+        locationService.requestLocation()
+        activitiyView()
+        
+        tableView.registerNib(UINib(nibName: "ResortTableViewCell", bundle: nil), forCellReuseIdentifier: resortTableCell)
+
+        self.observe("locationService.location").then { location in
+            return self.resortService.getCoordinates(location)
+        }.then { coordinates in
+            return self.requestSnowData.fetchConditionsNearUser(coordinates)
+        }.then { json in
+            return self.resortService.parseResorts(json)
+        }.then { resorts -> Void in
             self.resorts = resorts
-            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
         }
     }
 
@@ -30,22 +48,39 @@ class ResortsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(resortTableCell, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(resortTableCell, forIndexPath: indexPath) as! ResortTableViewCell
 
-        cell.textLabel?.text = self.resorts[indexPath.row].name
+        cell.resortNameLabel.text = self.resorts[indexPath.row].name
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("resortDetailSegue", sender: tableView)
     }
 
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "showResortDetailSegue") {
+        if (segue.identifier == "resortDetailSegue") {
             if let resortDetail = segue.destinationViewController as? ResortDetailViewController {
                 if let selectedResortIndex = self.tableView.indexPathForSelectedRow?.row {
                     resortDetail.resort = resorts[selectedResortIndex]
                 }
             }
         }
+    }
+    
+    func activitiyView() {
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        activityIndicator.center = self.tableView.center
+        activityIndicator.startAnimating()
+        self.tableView.addSubview(activityIndicator)
+        self.tableView.bringSubviewToFront(activityIndicator)
     }
 }

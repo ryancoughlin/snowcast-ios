@@ -5,25 +5,21 @@ import UIKit
     @IBOutlet weak var snowLevelsView: SnowLevelsView!
     @IBOutlet weak var resortNameLabel: UILabel!
     
-    var resort: ResortPreview?
-    let baseDepth: CGFloat = 100
-    let newSnow: Float = 12
+    var resort: ResortPreview!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resortNameLabel?.text = resort?.name
+        resortNameLabel.text = resort.name
+        snowLevelsView.newSnow24Label.text = resort.newSnow24String
+        snowLevelsView.baseDepthLabel.text = resort.baseDepthString
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let heightsFromAPI = Heights.init(newSnow: 2, baseDepth: 60)
-        let scaledHeights = heightsFromAPI * scaleFactor
-        print(scaledHeights)
-
-        self.snowLevelsView.baseHeight.constant = CGFloat(scaledHeights.baseDepth)
-        self.snowLevelsView.newSnow24Height.constant = CGFloat(scaledHeights.newSnow)
+    
+        self.snowLevelsView.baseHeight.constant = CGFloat(self.resort.scaledBaseDepth)
+        self.snowLevelsView.newSnow24Height.constant = CGFloat(self.resort.newSnow24)
 
         UIView.animateWithDuration(1, delay: 0.75, usingSpringWithDamping: 0.35, initialSpringVelocity: 0.45, options: [], animations: {
             

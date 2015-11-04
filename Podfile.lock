@@ -1,10 +1,32 @@
 PODS:
   - Alamofire (3.1.1)
+  - OMGHTTPURLRQ (3.0.2):
+    - OMGHTTPURLRQ/RQ (= 3.0.2)
+  - OMGHTTPURLRQ/FormURLEncode (3.0.2)
+  - OMGHTTPURLRQ/RQ (3.0.2):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.0.2)
+  - PromiseKit (3.0.0):
+    - PromiseKit/Foundation (= 3.0.0)
+    - PromiseKit/QuartzCore (= 3.0.0)
+    - PromiseKit/UIKit (= 3.0.0)
+  - PromiseKit/CorePromise (3.0.0)
+  - PromiseKit/Foundation (3.0.0):
+    - OMGHTTPURLRQ (~> 3.0.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.0.0):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - Alamofire
+  - PromiseKit
 
 SPEC CHECKSUMS:
   Alamofire: 9b0a7188b961a03914a99304488bd226b0e46c0e
+  OMGHTTPURLRQ: 8376dc887d76a5a7e2a67881dc788f917a2f437c
+  PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
 
 COCOAPODS: 0.38.2

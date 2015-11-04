@@ -1,28 +1,20 @@
-import Foundation
-
-let requestSnowData = RequestSnowData()
-
-typealias resortsCompletion = (Array <ResortPreview>) -> ()
+import CoreLocation
+import PromiseKit
 
 class ResortService {
-    
-    var requestSnowData: RequestSnowData?
-
-    func fetchResorts(completion: resortsCompletion) {
-        self.requestSnowData = RequestSnowData()
-        
-        requestSnowData?.getSnowConditons() { (let json) in
-            if let resortsRAW = json["items"] as? Array <Dictionary<String, AnyObject>> {
-
-                let resorts = resortsRAW.map() {
-                    ResortPreview(resortDictionary: $0)
-                }
-
-                completion(resorts)
-
-            } else {
-                print("Error")
+    func parseResorts(json: Array <Dictionary <String, AnyObject>>) -> Promise <Array <ResortPreview>> {
+        return Promise { fulfill, reject in
+            let resorts: Array <ResortPreview> = json.map() {
+                ResortPreview(dictionary: $0)
             }
+            fulfill(resorts)
+        }
+    }
+
+    func getCoordinates(location: CLLocation) -> Promise <CLLocationCoordinate2D> {
+        return Promise { fulfill, reject in
+            let coordinates = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude)
+            fulfill(coordinates)
         }
     }
 }

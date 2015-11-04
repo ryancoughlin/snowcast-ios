@@ -10,6 +10,7 @@ class ResortNavigationItem: UINavigationItem {
         logoImageView.contentMode = .ScaleAspectFit
         
         self.titleView = logoImageView
+        self.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 
 }
