@@ -25,10 +25,10 @@ class ResortsTableViewController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "ResortTableViewCell", bundle: nil), forCellReuseIdentifier: resortTableCell)
 
-        self.observe("locationService.location").then { location in
-            return self.resortService.getCoordinates(location)
-        }.then { coordinates in
-            return self.requestSnowData.fetchConditionsNearUser(coordinates)
+        let promise: Promise<CLLocation> = self.observe("locationService.location")
+        promise.then { location in
+            let location = self.resortService.getCoordinates(location)
+            return self.requestSnowData.fetchConditionsNearUser(location)
         }.then { json in
             return self.resortService.parseResorts(json)
         }.then { resorts -> Void in

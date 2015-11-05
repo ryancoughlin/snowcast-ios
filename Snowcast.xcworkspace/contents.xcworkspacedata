@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../Downloads/St_Louis_Zoo_sample.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Snowcast.xcodeproj">
    </FileRef>
    <FileRef

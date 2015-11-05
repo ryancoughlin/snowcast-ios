@@ -3,15 +3,17 @@ import UIKit
 
 class TrackerViewController: UIViewController {
 
+    @IBOutlet var mapView: TrackerMapView!
+
     let trackerService = TrackerService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        trackerService.startTracking()
+        trackerService.trackerMapView = self.mapView
     }
     
     @IBAction func stopTracker(sender: UIButton) {
-        trackerService.stopTracking()
+        trackerService.locationService.stopLocationUpdates()
     }
 }

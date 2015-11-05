@@ -3,25 +3,20 @@ import CoreLocation
 class TrackerService: NSObject {
 
     let locationService = UserLocation()
-    let trackerMapView = TrackerMapView()
+    internal var trackerMapView: TrackerMapView?
+
     var currentRun: Run?
-    var coordinates: Array <CLLocationCoordinate2D> = []
     
     override init() {
         super.init()
 
         locationService.fetch { newLocation in
             self.currentRun = self.currentRun != nil ? self.currentRun?.updatedRun(newLocation) : Run.create(newLocation)
-            self.trackerMapView.drawLine()
-            self.coordinates = (self.currentRun?.locations)!
+            if let run = self.currentRun {
+
+                self.trackerMapView?.drawLine(run.locations)
+            }
         }
     }
-    
-    func stopTracking() {
-        locationService.stopLocationUpdates()
-    }
 
-    func startTracking() {
-        locationService.startLocationUpdates()
-    }
 }

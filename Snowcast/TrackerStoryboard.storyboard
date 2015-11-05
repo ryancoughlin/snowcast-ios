@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hpa-TI-vM3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hpa-TI-vM3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -39,6 +39,9 @@
                             <constraint firstItem="gi2-9b-LUb" firstAttribute="leading" secondItem="aeH-6Q-zru" secondAttribute="leadingMargin" id="mFy-pa-IHP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="gi2-9b-LUb" id="Bfi-cm-seh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdI-2J-6xR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

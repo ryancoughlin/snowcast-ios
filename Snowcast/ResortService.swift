@@ -11,10 +11,7 @@ class ResortService {
         }
     }
 
-    func getCoordinates(location: CLLocation) -> Promise <CLLocationCoordinate2D> {
-        return Promise { fulfill, reject in
-            let coordinates = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude)
-            fulfill(coordinates)
-        }
+    func getCoordinates(location: CLLocation) -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude)
     }
 }

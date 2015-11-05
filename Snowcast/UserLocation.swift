@@ -1,7 +1,7 @@
 import Foundation
 import CoreLocation
 
-class UserLocation: NSObject, CLLocationManagerDelegate {
+class UserLocation: NSObject {
     
     var locationClosure: ((location: CLLocation) -> ())!
     
@@ -13,6 +13,11 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
         
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate = self
+    }
+
+    func fetch(completion: CLLocation -> Void) {
+        locationClosure = completion
+        startLocationUpdates()
     }
     
     func startLocationUpdates() {
@@ -31,21 +36,15 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
-    
+}
+
+extension UserLocation: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last
         locationClosure(location: location)
     }
-    
+
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
-    }
-    
-    deinit {
-        locationManager.delegate = nil
-    }
-    
-    func fetch(completion: CLLocation -> Void) {
-        locationClosure = completion
     }
 }
