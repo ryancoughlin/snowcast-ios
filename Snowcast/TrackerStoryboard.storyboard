@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hpa-TI-vM3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tracker View Controller-->
+        <scene sceneID="m0w-dC-Qkg">
+            <objects>
+                <viewController storyboardIdentifier="TrackerViewController" id="Hpa-TI-vM3" customClass="TrackerViewController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gCg-gq-qT9"/>
+                        <viewControllerLayoutGuide type="bottom" id="hLR-NJ-XXA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aeH-6Q-zru">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-xU-D0x">
+                                <rect key="frame" x="256" y="142" width="88" height="30"/>
+                                <state key="normal" title="Stop Tracker"/>
+                                <connections>
+                                    <action selector="stopTracker:" destination="Hpa-TI-vM3" eventType="touchUpInside" id="IK5-xN-Xw5"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi2-9b-LUb" customClass="TrackerMapView" customModule="Snowcast" customModuleProvider="target">
+                                <rect key="frame" x="20" y="200" width="560" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="HGb-Bw-Uoq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gi2-9b-LUb" secondAttribute="trailing" id="GSt-oG-fzV"/>
+                            <constraint firstItem="hLR-NJ-XXA" firstAttribute="top" secondItem="gi2-9b-LUb" secondAttribute="bottom" id="jop-ZT-Tc0"/>
+                            <constraint firstItem="gi2-9b-LUb" firstAttribute="leading" secondItem="aeH-6Q-zru" secondAttribute="leadingMargin" id="mFy-pa-IHP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdI-2J-6xR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="309"/>
+        </scene>
+    </scenes>
+</document>

@@ -45,9 +45,13 @@
 	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackOpaque</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>The spirit of stack overflow is coders helping coders</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>I have learned more on stack overflow than anything else</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The spirit of stack overflow is coders helping coders</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>I have learned more on stack overflow than anything else</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1Ijoic25vd2Nhc3QiLCJhIjoiRThTZEJUVSJ9.iBDNGv5t_HMMwho_8GRcOQ</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<string>YES</string>
 </dict>
 </plist>

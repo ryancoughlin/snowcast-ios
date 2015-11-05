@@ -3,6 +3,8 @@ import CoreLocation
 
 class UserLocation: NSObject, CLLocationManagerDelegate {
     
+    var locationClosure: ((location: CLLocation) -> ())!
+    
     private var locationManager = CLLocationManager()
     dynamic var location: CLLocation!
 
@@ -13,6 +15,18 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
     }
     
+    func startLocationUpdates() {
+        locationManager.distanceFilter = 6
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.activityType = CLActivityType.Fitness
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopLocationUpdates() {
+        locationManager.stopUpdatingLocation()
+    }
+    
     func requestLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -20,6 +34,7 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last
+        locationClosure(location: location)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -28,5 +43,9 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
     
     deinit {
         locationManager.delegate = nil
+    }
+    
+    func fetch(completion: CLLocation -> Void) {
+        locationClosure = completion
     }
 }
