@@ -22,20 +22,12 @@ struct ResortPreview {
             self.name = resortName
         }
         
-        if let resortInfo = dictionary["resortInfo"] as? Dictionary <String, AnyObject> {
-            if let items = resortInfo["items"] as? Array <Dictionary <String, AnyObject>> {
-                if let first = items[0] as? Dictionary <String, AnyObject> {
-                    if let baseDepth = first["avgBaseDepthMax"] as? Float {
-                        self.baseDepth = baseDepth
-                    }
-                }
-            }
+        if let baseDepth = dictionary["avgBaseDepthMax"] as? Float {
+            self.baseDepth = baseDepth
         }
         
-        if let resortInfo = dictionary["resortInfo"] as? Dictionary <String, AnyObject> {
-            if let base = resortInfo["newSnowMax"] as? Float {
-                self.newSnow24 = base
-            }
+        if let base = dictionary["newSnowMax"] as? Float {
+            self.newSnow24 = base
         }
         
         let heightsFromAPI = Heights.init(newSnow: self.newSnow24, baseDepth: self.baseDepth)
