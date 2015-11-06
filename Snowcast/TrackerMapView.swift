@@ -8,8 +8,8 @@ class TrackerMapView: MGLMapView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.delegate = self
 
+        self.delegate = self
         self.styleURL = NSURL(string: "asset://styles/dark-v8.json")
     }
     
@@ -40,9 +40,4 @@ extension TrackerMapView: MGLMapViewDelegate {
     func mapView(mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
         return UIColor.cyanColor()
     }
-
-    func mapView(mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor {
-        return UIColor.cyanColor()
-    }
-
 }
