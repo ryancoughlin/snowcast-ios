@@ -4,8 +4,9 @@ import Foundation
 struct Run {
     let updateCount: Int
     let lastLocation: CLLocation
-    let date: NSDate
+    let startDate: NSDate
     let distance: CLLocationDistance
+    let duration: NSTimeInterval
     let averageSpeed: Double
     let maxSpeed: Double
     let maxAltitude: Double
@@ -15,8 +16,9 @@ struct Run {
         
         return Run(updateCount: 1,
             lastLocation: location,
-            date: NSDate(),
+            startDate: NSDate(),
             distance: 0,
+            duration: NSTimeInterval(),
             averageSpeed: location.speed,
             maxSpeed: location.speed,
             maxAltitude: location.altitude,
@@ -32,11 +34,13 @@ struct Run {
         let newMaxAltitude = newLocation.altitude > maxAltitude ? newLocation.altitude : maxAltitude
         let newUpdateCount = updateCount + 1
         let newLocations = locations + [newLocation.coordinate]
+        let newDuration = NSDate().timeIntervalSinceDate(startDate)
         
         return Run(updateCount: newUpdateCount,
             lastLocation: newLocation,
-            date: date,
+            startDate: startDate,
             distance: newDistance,
+            duration: newDuration,
             averageSpeed: newAverageSpeed,
             maxSpeed: newMaxSpeed,
             maxAltitude: newMaxAltitude,
