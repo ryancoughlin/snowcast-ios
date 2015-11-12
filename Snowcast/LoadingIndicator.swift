@@ -24,7 +24,6 @@ class LoadingIndicator: UIView {
     }
     
     func setupView() {
-        
         loadingIndicatorView = loadViewFromNib()
         loadingIndicatorView.layer.cornerRadius = 30
         loadingImageView.animationImages = [UIImage]()
