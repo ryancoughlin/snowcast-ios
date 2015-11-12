@@ -9,7 +9,7 @@ class ResortsTableViewController: UITableViewController {
     var resortService: ResortService = ResortService()
     var locationService: UserLocation = UserLocation()
     var selectedIndexPath : NSIndexPath?
-    var activityIndicator = UIActivityIndicatorView()
+    let activityIndicator = LoadingIndicator(frame: CGRectMake(0, 0, 60, 60))
 
     var resorts: Array<ResortPreview> = [] {
         didSet {
@@ -21,7 +21,7 @@ class ResortsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         locationService.requestLocation()
-        activitiyView()
+        activityIndicator.startAnimating()
         
         tableView.registerNib(UINib(nibName: "ResortTableViewCell", bundle: nil), forCellReuseIdentifier: resortTableCell)
 
@@ -32,8 +32,8 @@ class ResortsTableViewController: UITableViewController {
         }.then { json in
             return self.resortService.parseResorts(json)
         }.then { resorts -> Void in
-            self.resorts = resorts
             self.activityIndicator.stopAnimating()
+            self.resorts = resorts
         }
     }
 
@@ -76,10 +76,7 @@ class ResortsTableViewController: UITableViewController {
     }
     
     func activitiyView() {
-        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        activityIndicator.center = self.tableView.center
-        activityIndicator.startAnimating()
+        activityIndicator.center = self.view.center
         self.tableView.addSubview(activityIndicator)
         self.tableView.bringSubviewToFront(activityIndicator)
     }

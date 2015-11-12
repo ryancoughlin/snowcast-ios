@@ -10,6 +10,8 @@
 		5D0784091BEA6AE900BC42AE /* ResortTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0784081BEA6AE900BC42AE /* ResortTableView.swift */; };
 		5D0B42FE1BE0590000AE1CCF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B42FD1BE0590000AE1CCF /* Extensions.swift */; };
 		5D0B43051BE05CC400AE1CCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B43031BE05CC400AE1CCF /* Main.storyboard */; };
+		5D25F9351BF4E3CC00F81406 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25F9341BF4E3CC00F81406 /* LoadingIndicator.swift */; };
+		5D25F9371BF4E3D700F81406 /* LoadingIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D25F9361BF4E3D700F81406 /* LoadingIndicator.xib */; };
 		5D90F11A1BC0EECF007C68EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90F1191BC0EECF007C68EE /* QuartzCore.framework */; };
 		5DACF3EB1BC0DE3600C8D018 /* ResortDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DACF3EA1BC0DE3600C8D018 /* ResortDetailViewController.swift */; };
 		5DBB61C31BB4326A0090A34E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB61C21BB4326A0090A34E /* AppDelegate.swift */; };
@@ -29,16 +31,17 @@
 		5DF436651BE9A8CF0063AEE5 /* ResortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF436631BE9A8CF0063AEE5 /* ResortTableViewCell.swift */; };
 		5DF436661BE9A8CF0063AEE5 /* ResortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF436641BE9A8CF0063AEE5 /* ResortTableViewCell.xib */; };
 		5DF436681BE9AE9F0063AEE5 /* Aspen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5DF436671BE9AE9F0063AEE5 /* Aspen.gpx */; };
-		91F0BB8DE314490D76840722 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B11DCEDFE7B939252A0265 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		91F0BB8DE314490D76840722 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B11DCEDFE7B939252A0265 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D0784081BEA6AE900BC42AE /* ResortTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortTableView.swift; sourceTree = "<group>"; };
 		5D0B42FD1BE0590000AE1CCF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5D0B43041BE05CC400AE1CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D25F9341BF4E3CC00F81406 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		5D25F9361BF4E3D700F81406 /* LoadingIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingIndicator.xib; sourceTree = "<group>"; };
 		5D90F1191BC0EECF007C68EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5DACF3EA1BC0DE3600C8D018 /* ResortDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortDetailViewController.swift; sourceTree = "<group>"; };
-		5DB031681BE1CD0F0098D4EA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5DBB61BF1BB4326A0090A34E /* Snowcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBB61C21BB4326A0090A34E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DBB61C91BB4326A0090A34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 			children = (
 				5D0B43031BE05CC400AE1CCF /* Main.storyboard */,
 				5DBB61CB1BB4326A0090A34E /* LaunchScreen.storyboard */,
+				5D25F9341BF4E3CC00F81406 /* LoadingIndicator.swift */,
+				5D25F9361BF4E3D700F81406 /* LoadingIndicator.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -123,7 +128,6 @@
 				5DCB542F1BDBC5330054A278 /* SnowLevelsView.swift */,
 				5D0B42FD1BE0590000AE1CCF /* Extensions.swift */,
 				5DCB54311BDBC5480054A278 /* SnowLevelsView.xib */,
-				5DB031681BE1CD0F0098D4EA /* MyPlayground.playground */,
 				5DBB61D61BB4329E0090A34E /* UserLocation.swift */,
 				5DBB61D81BB432AE0090A34E /* ResortPreview.swift */,
 				5DF436631BE9A8CF0063AEE5 /* ResortTableViewCell.swift */,
@@ -244,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D25F9371BF4E3D700F81406 /* LoadingIndicator.xib in Resources */,
 				5DCD5DC51BE6B5760094FD65 /* CircularStd-Bold.otf in Resources */,
 				5DF436681BE9AE9F0063AEE5 /* Aspen.gpx in Resources */,
 				5DBB61CD1BB4326A0090A34E /* LaunchScreen.storyboard in Resources */,
@@ -321,6 +326,7 @@
 				5DBB61D71BB4329E0090A34E /* UserLocation.swift in Sources */,
 				5DC4FC3B1BC0952B0021F215 /* ResortsTableViewController.swift in Sources */,
 				5DCD5DC91BE712D80094FD65 /* ResortNavigationItem.swift in Sources */,
+				5D25F9351BF4E3CC00F81406 /* LoadingIndicator.swift in Sources */,
 				5DBB61D91BB432AE0090A34E /* ResortPreview.swift in Sources */,
 				5DBB61C31BB4326A0090A34E /* AppDelegate.swift in Sources */,
 			);
