@@ -5,6 +5,7 @@ use_frameworks!
 pod 'Alamofire'
 pod 'PromiseKit'
 pod 'Mapbox-iOS-SDK'
+pod 'Charts'
 
 # disable bitcode in every sub-target
 post_install do |installer|

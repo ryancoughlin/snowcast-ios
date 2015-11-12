@@ -20,7 +20,10 @@ class ResortsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationService.requestLocation()
+        locationService.fetch { location in
+            print(location)
+        }
+
         activitiyView()
         
         tableView.registerNib(UINib(nibName: "ResortTableViewCell", bundle: nil), forCellReuseIdentifier: resortTableCell)

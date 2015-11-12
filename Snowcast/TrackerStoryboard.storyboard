@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hpa-TI-vM3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Es5-1k-ZtE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-xU-D0x">
-                                <rect key="frame" x="256" y="142" width="88" height="30"/>
-                                <state key="normal" title="Stop Tracker"/>
-                                <connections>
-                                    <action selector="stopTracker:" destination="Hpa-TI-vM3" eventType="touchUpInside" id="IK5-xN-Xw5"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi2-9b-LUb" customClass="TrackerMapView" customModule="Snowcast" customModuleProvider="target">
                                 <rect key="frame" x="20" y="200" width="560" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,6 +24,20 @@
                                     <constraint firstAttribute="height" constant="400" id="HGb-Bw-Uoq"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-xU-D0x">
+                                <rect key="frame" x="320" y="127" width="88" height="30"/>
+                                <state key="normal" title="Stop Tracker"/>
+                                <connections>
+                                    <segue destination="7cd-hO-8TK" kind="show" identifier="showLatestRun" id="aLr-2b-IFN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GII-Nv-ns3">
+                                <rect key="frame" x="193" y="127" width="90" height="30"/>
+                                <state key="normal" title="Start Tracker"/>
+                                <connections>
+                                    <action selector="startTracker:" destination="Hpa-TI-vM3" eventType="touchUpInside" id="IfM-hy-hzk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -39,11 +46,69 @@
                             <constraint firstItem="gi2-9b-LUb" firstAttribute="leading" secondItem="aeH-6Q-zru" secondAttribute="leadingMargin" id="mFy-pa-IHP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ihm-pA-lbj">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="5OW-7D-ISJ">
+                            <connections>
+                                <action selector="dismiss" destination="Hpa-TI-vM3" id="zfn-Vj-1fu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="gi2-9b-LUb" id="Bfi-cm-seh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdI-2J-6xR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="309"/>
+        </scene>
+        <!--Run View Controller-->
+        <scene sceneID="JxA-VZ-YCz">
+            <objects>
+                <viewController id="7cd-hO-8TK" customClass="RunViewController" customModule="Snowcast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aoz-sa-jll"/>
+                        <viewControllerLayoutGuide type="bottom" id="15a-V2-Vrd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zl0-fO-oPb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYM-US-nlN" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hYM-US-nlN" firstAttribute="leading" secondItem="Zl0-fO-oPb" secondAttribute="leadingMargin" id="WHm-Ai-gwZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hYM-US-nlN" secondAttribute="trailing" id="pMj-TY-HEG"/>
+                            <constraint firstItem="hYM-US-nlN" firstAttribute="top" secondItem="Aoz-sa-jll" secondAttribute="bottom" id="xBP-AF-Kx7"/>
+                            <constraint firstItem="15a-V2-Vrd" firstAttribute="top" secondItem="hYM-US-nlN" secondAttribute="bottom" id="xwc-FL-3CZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="hYM-US-nlN" id="ttt-af-cnf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YdO-DD-9pA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="309"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zuU-UY-R1m">
+            <objects>
+                <navigationController storyboardIdentifier="TrackerNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Es5-1k-ZtE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z5D-2o-nlR" customClass="NavigationBar" customModule="Snowcast" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hpa-TI-vM3" kind="relationship" relationship="rootViewController" id="iQI-U3-c5b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9R-PX-Sv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="348" y="309"/>
         </scene>

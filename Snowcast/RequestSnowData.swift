@@ -2,7 +2,7 @@ import PromiseKit
 import CoreLocation
 import Alamofire
 
-let BASE_URL: String = "http://localhost:9999/api/near"
+let BASE_URL: String = "https://boiling-harbor-8062.herokuapp.com/api/near/"
 
 class RequestSnowData {
     func fetchConditionsNearUser(location: CLLocationCoordinate2D) -> Promise <Array <Dictionary <String, AnyObject>>> {

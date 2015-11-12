@@ -13,10 +13,13 @@ class TrackerService: NSObject {
         locationService.fetch { newLocation in
             self.currentRun = self.currentRun != nil ? self.currentRun?.updatedRun(newLocation) : Run.create(newLocation)
             if let run = self.currentRun {
-
                 self.trackerMapView?.drawLine(run.locations)
+                print(run.duration)
             }
         }
     }
-
+    
+    func latestRun() -> Run {
+        return self.currentRun!
+    }
 }

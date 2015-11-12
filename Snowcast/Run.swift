@@ -11,6 +11,7 @@ struct Run {
     let maxSpeed: Double
     let maxAltitude: Double
     var locations: Array <CLLocationCoordinate2D>
+    var loc: Array <CLLocation>
     
     static func create(location: CLLocation) -> Run {
         
@@ -22,7 +23,8 @@ struct Run {
             averageSpeed: location.speed,
             maxSpeed: location.speed,
             maxAltitude: location.altitude,
-            locations: [location.coordinate]
+            locations: [location.coordinate],
+            loc: [location]
         )
     }
     
@@ -35,6 +37,7 @@ struct Run {
         let newUpdateCount = updateCount + 1
         let newLocations = locations + [newLocation.coordinate]
         let newDuration = NSDate().timeIntervalSinceDate(startDate)
+        let newLoc = loc + [newLocation]
         
         return Run(updateCount: newUpdateCount,
             lastLocation: newLocation,
@@ -44,7 +47,8 @@ struct Run {
             averageSpeed: newAverageSpeed,
             maxSpeed: newMaxSpeed,
             maxAltitude: newMaxAltitude,
-            locations: newLocations
+            locations: newLocations,
+            loc: newLoc
         )
     }
 }

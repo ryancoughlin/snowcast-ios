@@ -4,13 +4,15 @@ import UIKit
 
     @IBOutlet weak var snowLevelsView: SnowLevelsView!
     @IBOutlet weak var resortNameLabel: UILabel!
-    
+    @IBOutlet weak var phraseLabel: UILabel!
+
     var resort: ResortPreview!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resortNameLabel.text = resort.name
+        phraseLabel.text = "We can hope for snow"
         snowLevelsView.newSnow24Label.text = resort.newSnow24String
         snowLevelsView.baseDepthLabel.text = resort.baseDepthString
     }

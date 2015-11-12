@@ -11,11 +11,14 @@
 		5D0B42FE1BE0590000AE1CCF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B42FD1BE0590000AE1CCF /* Extensions.swift */; };
 		5D0B43051BE05CC400AE1CCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B43031BE05CC400AE1CCF /* Main.storyboard */; };
 		5D0FCA591BEB08CE009FC18D /* TrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0FCA581BEB08CE009FC18D /* TrackerService.swift */; };
+		5D5898131BF449EB007DBE8E /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5898121BF449EB007DBE8E /* LineChartView.swift */; };
+		5D60BF771BF43B2000F21B8C /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D60BF761BF43B2000F21B8C /* RunViewController.swift */; };
 		5D6F11F11BEBB43A001AA273 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F11F01BEBB43A001AA273 /* Run.swift */; };
 		5D7208511BEAF1620063DD0C /* TrackerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7208501BEAF1620063DD0C /* TrackerStoryboard.storyboard */; };
 		5D7208531BEAF22B0063DD0C /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7208521BEAF22B0063DD0C /* TrackerViewController.swift */; };
 		5D7208551BEAF3D50063DD0C /* TrackerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7208541BEAF3D50063DD0C /* TrackerMapView.swift */; };
 		5D90F11A1BC0EECF007C68EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90F1191BC0EECF007C68EE /* QuartzCore.framework */; };
+		5D91D7EC1BF2633700E1826E /* PhraseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D91D7EB1BF2633700E1826E /* PhraseLabel.swift */; };
 		5DACF3EB1BC0DE3600C8D018 /* ResortDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DACF3EA1BC0DE3600C8D018 /* ResortDetailViewController.swift */; };
 		5DBB61C31BB4326A0090A34E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB61C21BB4326A0090A34E /* AppDelegate.swift */; };
 		5DBB61CA1BB4326A0090A34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBB61C91BB4326A0090A34E /* Assets.xcassets */; };
@@ -42,11 +45,14 @@
 		5D0B42FD1BE0590000AE1CCF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5D0B43041BE05CC400AE1CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D0FCA581BEB08CE009FC18D /* TrackerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerService.swift; sourceTree = "<group>"; };
+		5D5898121BF449EB007DBE8E /* LineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineChartView.swift; path = Snowcast/LineChartView.swift; sourceTree = "<group>"; };
+		5D60BF761BF43B2000F21B8C /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		5D6F11F01BEBB43A001AA273 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		5D7208501BEAF1620063DD0C /* TrackerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TrackerStoryboard.storyboard; sourceTree = "<group>"; };
 		5D7208521BEAF22B0063DD0C /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		5D7208541BEAF3D50063DD0C /* TrackerMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerMapView.swift; sourceTree = "<group>"; };
 		5D90F1191BC0EECF007C68EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5D91D7EB1BF2633700E1826E /* PhraseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhraseLabel.swift; sourceTree = "<group>"; };
 		5DACF3EA1BC0DE3600C8D018 /* ResortDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResortDetailViewController.swift; sourceTree = "<group>"; };
 		5DB031681BE1CD0F0098D4EA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5DBB61BF1BB4326A0090A34E /* Snowcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +117,7 @@
 				5D0FCA581BEB08CE009FC18D /* TrackerService.swift */,
 				5D7208521BEAF22B0063DD0C /* TrackerViewController.swift */,
 				5D0B43031BE05CC400AE1CCF /* Main.storyboard */,
+				5D91D7EB1BF2633700E1826E /* PhraseLabel.swift */,
 				5DBB61CB1BB4326A0090A34E /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -139,6 +146,7 @@
 				5DB031681BE1CD0F0098D4EA /* MyPlayground.playground */,
 				5DBB61D61BB4329E0090A34E /* UserLocation.swift */,
 				5D6F11F01BEBB43A001AA273 /* Run.swift */,
+				5D60BF761BF43B2000F21B8C /* RunViewController.swift */,
 				5DBB61D81BB432AE0090A34E /* ResortPreview.swift */,
 				5DF436631BE9A8CF0063AEE5 /* ResortTableViewCell.swift */,
 				5DF436671BE9AE9F0063AEE5 /* Aspen.gpx */,
@@ -158,6 +166,7 @@
 		5DBB61B61BB4326A0090A34E = {
 			isa = PBXGroup;
 			children = (
+				5D5898121BF449EB007DBE8E /* LineChartView.swift */,
 				A9864436B632EB42BD1D23FC /* Frameworks */,
 				2D4A6CCACD68B5C2A9DC4D3A /* Pods */,
 				5DBB61C01BB4326A0090A34E /* Products */,
@@ -332,14 +341,17 @@
 				5D7208551BEAF3D50063DD0C /* TrackerMapView.swift in Sources */,
 				5DCB54301BDBC5330054A278 /* SnowLevelsView.swift in Sources */,
 				5DF436651BE9A8CF0063AEE5 /* ResortTableViewCell.swift in Sources */,
+				5D91D7EC1BF2633700E1826E /* PhraseLabel.swift in Sources */,
 				5DC4FC3D1BC0959F0021F215 /* ResortService.swift in Sources */,
 				5DC630991BE8FFC60060636B /* ScaleViewHeights.swift in Sources */,
 				5DCD5DC71BE7035B0094FD65 /* ResortNavigationController.swift in Sources */,
 				5D0FCA591BEB08CE009FC18D /* TrackerService.swift in Sources */,
 				5D0B42FE1BE0590000AE1CCF /* Extensions.swift in Sources */,
 				5DBB61D71BB4329E0090A34E /* UserLocation.swift in Sources */,
+				5D60BF771BF43B2000F21B8C /* RunViewController.swift in Sources */,
 				5DC4FC3B1BC0952B0021F215 /* ResortsTableViewController.swift in Sources */,
 				5DCD5DC91BE712D80094FD65 /* ResortNavigationItem.swift in Sources */,
+				5D5898131BF449EB007DBE8E /* LineChartView.swift in Sources */,
 				5DBB61D91BB432AE0090A34E /* ResortPreview.swift in Sources */,
 				5D6F11F11BEBB43A001AA273 /* Run.swift in Sources */,
 				5DBB61C31BB4326A0090A34E /* AppDelegate.swift in Sources */,

@@ -13,7 +13,23 @@ class TrackerViewController: UIViewController {
         trackerService.trackerMapView = self.mapView
     }
     
-    @IBAction func stopTracker(sender: UIButton) {
-        trackerService.locationService.stopLocationUpdates()
+    @IBAction func startTracker(sender: UIButton) {
+        trackerService.locationService.startLocationUpdates()
+    }
+
+    @IBAction func dismiss() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showLatestRun") {
+            trackerService.locationService.stopLocationUpdates()
+            if let latestRun = segue.destinationViewController as? RunViewController
+            {
+                latestRun.run = trackerService.currentRun
+            }
+        }
     }
 }

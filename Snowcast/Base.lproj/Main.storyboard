@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ext-NQ-jWe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lML-EP-DyL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CircularStd-Bold.otf">
+            <string>CircularStd-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Resorts Near Me-->
         <scene sceneID="2pO-Tv-12g">
@@ -39,6 +44,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Resorts Near Me" id="O0Z-fm-ev1">
                         <barButtonItem key="backBarButtonItem" title=" " id="TfC-he-a28"/>
+                        <barButtonItem key="rightBarButtonItem" title="Tracker" id="pv6-J2-lkQ">
+                            <connections>
+                                <segue destination="EH7-af-2P2" kind="showDetail" id="onV-aw-HTy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceT-KI-0vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,27 +67,14 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-jw-0O1">
-                                <rect key="frame" x="20" y="30" width="779" height="157"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="We can only hope for snow">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <font key="NSFont" metaFont="system" size="48"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.25"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at Stowe Mountain Resort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSq-10-zRn">
-                                <rect key="frame" x="20" y="182" width="197" height="21"/>
+                                <rect key="frame" x="20" y="97.5" width="197" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qs-mc-BA2" customClass="SnowLevelsView" customModule="Snowcast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="423" width="600" height="114"/>
+                                <rect key="frame" x="0.0" y="338" width="600" height="198"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="6X7-Hz-qNn"/>
@@ -88,30 +85,37 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powder day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41f-aN-bIb">
+                                <rect key="frame" x="20" y="30" width="560" height="67.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="53"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="1Qs-mc-BA2" secondAttribute="trailing" constant="-20" id="48J-GU-egu"/>
-                            <constraint firstItem="mSq-10-zRn" firstAttribute="top" secondItem="cHg-jw-0O1" secondAttribute="bottom" constant="-5" id="4FD-Kf-Let"/>
                             <constraint firstItem="1Qs-mc-BA2" firstAttribute="top" secondItem="mSq-10-zRn" secondAttribute="bottom" constant="220" id="Jkj-u2-zww"/>
                             <constraint firstItem="5bn-YF-NOa" firstAttribute="top" secondItem="1Qs-mc-BA2" secondAttribute="bottom" id="Nwe-e7-o7X"/>
-                            <constraint firstItem="cHg-jw-0O1" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="WaP-yj-2Im"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="41f-aN-bIb" secondAttribute="trailing" id="SA2-Dz-gVx"/>
                             <constraint firstItem="mSq-10-zRn" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="ZWv-A5-fVs"/>
-                            <constraint firstItem="cHg-jw-0O1" firstAttribute="top" secondItem="vv3-iq-XJ5" secondAttribute="bottom" constant="30" id="gOs-l9-xLd"/>
+                            <constraint firstItem="41f-aN-bIb" firstAttribute="top" secondItem="vv3-iq-XJ5" secondAttribute="bottom" constant="30" id="fuN-fj-QDm"/>
                             <constraint firstItem="1Qs-mc-BA2" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" constant="-20" id="gxB-Hh-bve"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cHg-jw-0O1" secondAttribute="trailing" id="tma-W4-itM"/>
+                            <constraint firstItem="41f-aN-bIb" firstAttribute="leading" secondItem="DOI-4f-muH" secondAttribute="leadingMargin" id="ms8-rv-hxU"/>
+                            <constraint firstItem="mSq-10-zRn" firstAttribute="top" secondItem="41f-aN-bIb" secondAttribute="bottom" id="o2Y-Gm-U8l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="or8-79-YO3" customClass="ResortNavigationItem" customModule="Snowcast" customModuleProvider="target"/>
                     <connections>
-                        <outlet property="resortNameLabel" destination="mSq-10-zRn" id="Gln-F8-stW"/>
+                        <outlet property="phraseLabel" destination="41f-aN-bIb" id="9Uc-8g-nTf"/>
+                        <outlet property="resortNameLabel" destination="mSq-10-zRn" id="tRq-yJ-N7e"/>
                         <outlet property="snowLevelsView" destination="1Qs-mc-BA2" id="lqQ-WW-Lky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0C-Pd-Lnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1817" y="1959"/>
+            <point key="canvasLocation" x="1793" y="1192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NcR-In-T3w">
@@ -138,35 +142,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McP-aH-vLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="1192"/>
+            <point key="canvasLocation" x="185" y="1192"/>
         </scene>
-        <!--TrackerViewController-->
+        <!--TrackerNavigationController-->
         <scene sceneID="K7B-UB-EcQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="TrackerStoryboard" referencedIdentifier="TrackerViewController" id="EH7-af-2P2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="TrackerStoryboard" referencedIdentifier="TrackerNavigationController" id="EH7-af-2P2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5Bn-nW-leD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wr-0A-6pq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="1748"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dei-r3-vqu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ext-NQ-jWe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GTN-sZ-USw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EH7-af-2P2" kind="relationship" relationship="rootViewController" id="2qW-6U-icc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D5e-cf-PM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-31" y="1748"/>
+            <point key="canvasLocation" x="1005" y="1682"/>
         </scene>
     </scenes>
     <resources>

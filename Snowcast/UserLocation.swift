@@ -1,4 +1,3 @@
-import Foundation
 import CoreLocation
 
 class UserLocation: NSObject {
