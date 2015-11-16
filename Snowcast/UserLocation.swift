@@ -12,6 +12,8 @@ class UserLocation: NSObject {
         
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate = self
+        locationManager.pausesLocationUpdatesAutomatically = true
+        locationManager.allowsBackgroundLocationUpdates = true
     }
 
     func fetch(completion: CLLocation -> Void) {
@@ -20,7 +22,7 @@ class UserLocation: NSObject {
     }
     
     func startLocationUpdates() {
-        locationManager.distanceFilter = 6
+        locationManager.distanceFilter = 10
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = CLActivityType.Fitness
         locationManager.requestWhenInUseAuthorization()
@@ -40,7 +42,12 @@ class UserLocation: NSObject {
 extension UserLocation: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last
-        locationClosure(location: location)
+        
+        print(location.horizontalAccuracy)
+        
+        if location.horizontalAccuracy < 16 {
+            locationClosure(location: location)
+        }
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

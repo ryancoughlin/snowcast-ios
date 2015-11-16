@@ -4,6 +4,7 @@ import UIKit
 class TrackerViewController: UIViewController {
 
     @IBOutlet var mapView: TrackerMapView!
+    @IBOutlet weak var currentAltitudeLabel: UILabel!
 
     let trackerService = TrackerService()
 
@@ -11,6 +12,13 @@ class TrackerViewController: UIViewController {
         super.viewDidLoad()
 
         trackerService.trackerMapView = self.mapView
+        
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self, selector: "updateLabels", name: "locationUpdate", object: nil)
+    }
+    
+    func updateLabels() {
+  
     }
     
     @IBAction func startTracker(sender: UIButton) {

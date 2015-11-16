@@ -12,14 +12,20 @@ class TrackerService: NSObject {
 
         locationService.fetch { newLocation in
             self.currentRun = self.currentRun != nil ? self.currentRun?.updatedRun(newLocation) : Run.create(newLocation)
+                sendLiveData(currentRun!)
             if let run = self.currentRun {
                 self.trackerMapView?.drawLine(run.locations)
-                print(run.duration)
             }
         }
     }
     
     func latestRun() -> Run {
+        print(self.currentRun?.maxAltitude)
         return self.currentRun!
+    }
+    
+    func sendLiveData(run: Run) {
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.postNotificationName("locaitonUpdate", object: run)
     }
 }

@@ -4,6 +4,8 @@ struct ResortPreview {
     var baseDepth: Float = 0
     var newSnow24: Float = 10
     var scaledBaseDepth: Float = 50
+    
+    
     var baseDepthString: String {
         get {
             return String(format: "%2d\"", baseDepth)

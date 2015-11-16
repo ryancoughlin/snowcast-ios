@@ -44,17 +44,19 @@ class RunViewController: UIViewController, ChartViewDelegate {
             return $0.timestamp
         }
         
-        setChart(time!, values: speed!)
+//        setChart(time!, altitude: altitude)
     }
     
     func setChart(dataPoints: [NSDate], altitude: [Double], speed: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
         
-        for i in 0..< dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-            dataEntries.append(dataEntry)
-        }
+        let foo = speed
+        
+//        for i in 0..< dataPoints.count {
+//            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+//            dataEntries.append(dataEntry)
+//        }
 
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
